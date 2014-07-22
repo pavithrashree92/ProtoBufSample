@@ -1,0 +1,37 @@
+option java_outer_classname="ProtoUser";
+
+message User {
+
+   required int32  id = 1; 
+   required string name = 2;
+   required string firstname = 3;
+   required string lastname = 4;
+
+
+ 
+
+   // Embedded Address message spec
+
+    message Address {
+      required int32 id = 1;
+      required string country = 2 [default = "IND"];; 
+      optional string state = 3;
+      optional string city = 4;
+      optional string street = 5;
+      optional string zip = 6;
+
+ 
+
+      enum Type {
+         HOME = 0;
+
+         WORK = 1; 
+
+	 MOBILE = 2;
+       }
+
+       optional Type addrType = 7 [default = HOME]; 
+
+ }
+   repeated Address addr = 16;
+}
