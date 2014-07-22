@@ -6,6 +6,7 @@ message User {
    required string name = 2;
    required string firstname = 3;
    required string lastname = 4;
+   required String gender = 5;
 
 
  

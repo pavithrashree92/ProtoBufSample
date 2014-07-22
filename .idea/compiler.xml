@@ -25,6 +25,9 @@
         <module name="ProtoBufSample" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ProtoBufSample" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
 

@@ -7,6 +7,42 @@
     <groupId>ProtoBufSample</groupId>
     <artifactId>ProtoBufSample</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.google.protobuf.tools</groupId>
+                <artifactId>maven-protoc-plugin</artifactId>
+                <configuration>
+                    <protocExecutable>protoc</protocExecutable>
+                    <protoSourceRoot>${project.basedir}/src/main/proto/</protoSourceRoot>
+                    <languageSpecifications>
+                        <LanguageSpecification>
+                            <language>JAVA</language>
+                            <outputDirectory>
+                                ${project.basedir}/target/generated-sources/java
+                            </outputDirectory>
+                        </LanguageSpecification>
+                    </languageSpecifications>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
     <dependencies>
         <dependency>
@@ -16,10 +52,13 @@
         </dependency>
     </dependencies>
 
+
     <pluginRepositories>
         <pluginRepository>
-            <id>protoc-plugin</id>
-            <url>http://sergei-ivanov.github.com/maven-protoc-plugin/repo/releases/</url>
+            <id>dtrott</id>
+            <url>http://maven.davidtrott.com/repository</url>
         </pluginRepository>
     </pluginRepositories>
+
+
 </project>
