@@ -24,6 +24,7 @@
                     <protocExecutable>protoc</protocExecutable>
                     <protoSourceRoot>${project.basedir}/src/main/proto/</protoSourceRoot>
                     <languageSpecifications>
+
                         <LanguageSpecification>
                             <language>JAVA</language>
                             <outputDirectory>
